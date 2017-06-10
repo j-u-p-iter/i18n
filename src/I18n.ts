@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 import IntlMessageFormat from 'intl-messageformat';
 
 import {
@@ -12,12 +14,18 @@ class I18n implements I18nInterface {
   private _jsonParser: JSONParserInterface;
 
   constructor(options: I18nOptionsInterface) {
-    this._jsonParser = options.jsonParser;
-    this._jsonParser.read(this._getPathToFile(options.currentLocale));
+    const {
+      jsonParser,
+      directoryPath,
+      currentLocale
+    } = options;
+
+    this._jsonParser = jsonParser;
+    this._jsonParser.read(this._getPathToFile(directoryPath, currentLocale));
   }
 
-  _getPathToFile(fileName: string): string {
-    return `${__dirname}/translations/${fileName}.json`;
+  _getPathToFile(directoryPath:string, fileName: string): string {
+    return path.join(directoryPath, `${fileName}.json`);
   }
 
   _formatMessage(message: string, data?: Obj<any>) {

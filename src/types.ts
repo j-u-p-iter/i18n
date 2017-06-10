@@ -13,6 +13,7 @@ type Obj<T> = {
 
 type I18nOptionsInterface = {
   jsonParser: JSONParserInterface;
+  directoryPath: string;
   currentLocale: string;
 }
 
