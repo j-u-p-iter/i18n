@@ -1,5 +1,5 @@
 interface I18nInterface {
-  t(pathToValue: string, data: Obj<any>): string;
+  t(pathToValue: string, data?: Obj<any>): string;
 }
 
 interface JSONParserInterface {

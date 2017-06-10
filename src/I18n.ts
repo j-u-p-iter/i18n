@@ -32,7 +32,7 @@ class I18n implements I18nInterface {
     return intlMessage.format(data);
   }
 
-  t(pathToValue: string, data: Obj<any>): string {
+  t(pathToValue: string, data?: Obj<any>): string {
     return this._formatMessage(this._jsonParser.resolvePath(pathToValue), data);
   }
 }
