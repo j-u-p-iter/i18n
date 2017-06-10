@@ -1,9 +1,3 @@
-/**
- * # I18n Internalization
- *
- */
-
-
 import IntlMessageFormat from 'intl-messageformat';
 
 import {
