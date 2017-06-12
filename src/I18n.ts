@@ -10,7 +10,7 @@ import {
 
 
 class I18n implements I18nInterface {
-  private _currentLocale: string = 'en';
+  private _locale: string = 'en';
   private _content: Obj<any>;
 
   private _formatMessage(message: string, data?: Obj<any>) {
@@ -26,9 +26,8 @@ class I18n implements I18nInterface {
   }
 
   private _resolvePath(pathToValue: string): string {
-    return this._resolveObjPath(this._content, pathToValue);
+    return this._resolveObjPath(this._content[this._locale], pathToValue);
   }
-
 
   constructor(options: I18nOptionsInterface) {
     const {
@@ -38,7 +37,7 @@ class I18n implements I18nInterface {
 
     this._content = content;
 
-    if (locale) { this._currentLocale = locale; }
+    if (locale) { this._locale = locale; }
   }
 
   t(pathToValue: string, data?: Obj<any>): string {
