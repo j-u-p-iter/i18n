@@ -1,19 +1,25 @@
 {
   "name": "@j.u.p.iter/i18n",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
-  "main": "index.js",
+  "main": "cmjs/index.js",
+  "main": "j.u.p.iter",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "tsc"
+    "build": "node ./scripts/build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@j.u.p.iter/modules-builder": "^1.0.1",
     "intl-messageformat": "^1.3.0"
   },
   "devDependencies": {
-    "@types/node": "^7.0.29",
-    "typescript": "^2.3.4"
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "1.6.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
