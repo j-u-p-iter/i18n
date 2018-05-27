@@ -1,9 +1,9 @@
 {
   "name": "@j.u.p.iter/i18n",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "",
   "main": "cmjs/index.js",
-  "main": "j.u.p.iter",
+  "author": "j.u.p.iter",
   "scripts": {
     "build": "node ./scripts/build"
   },
